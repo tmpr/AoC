@@ -1,2 +1,2 @@
-template
-build.py
+.vscode
+__pycache__
