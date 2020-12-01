@@ -10,7 +10,7 @@ def mul_summands(input_data: str, n_summands: int) -> int:
             return reduce(mul, comb)
 
 
-def part_1(input_data: str, n_summands=2):
+def part_1(input_data: str):
     return mul_summands(input_data, 2)
 
 
