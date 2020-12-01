@@ -4,7 +4,7 @@ from aocd.models import Puzzle
 from fire import Fire
 
 def solve(day, year='2020', submit=True):
-    sol = import_module(f'{year}.{day}.solutions') 
+    sol = import_module(f'src.{year}.{day}.solutions') 
     puzzle = Puzzle(int(year), int(day))
     answer_a = sol.part_1(puzzle.input_data)
     if submit:
