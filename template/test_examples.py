@@ -13,4 +13,4 @@ def test_1(example):
 
 @pytest.mark.parametrize('example', EXAMPLES['part_2'])
 def test_2(example):
-     assert part_1(example['input']) == example['solution']
+     assert part_2(example['input']) == example['solution']
