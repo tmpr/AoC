@@ -16,6 +16,4 @@ def solve(day, year=2020, submit=True, timeit=False):
         puzzle.answer_b = answer_b
 
 if __name__ == "__main__":
-    t = time()
     Fire(solve)
-    print(time() - t)
