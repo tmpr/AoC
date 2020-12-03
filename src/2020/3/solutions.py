@@ -1,8 +1,5 @@
 import re
 
-from operator import mul
-from functools import reduce
-
 import numpy as np
 
 
@@ -31,4 +28,4 @@ def part_1(input_data: str, dv=3, dh=1):
 def part_2(input_data: str):
     """Return second solution of puzzle."""
     configs = (1, 1), (3, 1), (5, 1), (7, 1), (1, 2)
-    return reduce(mul, (part_1(input_data, *config) for config in configs))
+    return np.prod(part_1(input_data, *config) for config in configs)

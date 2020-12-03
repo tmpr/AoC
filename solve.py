@@ -1,9 +1,11 @@
 from importlib import import_module
 from aocd.models import Puzzle
 
+from time import time
+
 from fire import Fire
 
-def solve(day, year=2020, submit=True):
+def solve(day, year=2020, submit=True, timeit=False):
     sol = import_module(f'src.{year}.{day}.solutions') 
     puzzle = Puzzle(int(year), int(day))
     answer_a = sol.part_1(puzzle.input_data)
@@ -14,4 +16,6 @@ def solve(day, year=2020, submit=True):
         puzzle.answer_b = answer_b
 
 if __name__ == "__main__":
+    t = time()
     Fire(solve)
+    print(time() - t)
