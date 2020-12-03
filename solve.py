@@ -1,12 +1,11 @@
 from importlib import import_module
 from aocd.models import Puzzle
 
-from time import time
-
 from fire import Fire
 
-def solve(day, year=2020, submit=True, timeit=False):
-    sol = import_module(f'src.{year}.{day}.solutions') 
+
+def solve(day, year=2020, submit=True):
+    sol = import_module(f'src.{year}.{day}.solutions')
     puzzle = Puzzle(int(year), int(day))
     answer_a = sol.part_1(puzzle.input_data)
     if submit:
@@ -14,6 +13,7 @@ def solve(day, year=2020, submit=True, timeit=False):
     answer_b = sol.part_2(puzzle.input_data)
     if submit:
         puzzle.answer_b = answer_b
+
 
 if __name__ == "__main__":
     Fire(solve)
