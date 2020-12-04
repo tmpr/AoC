@@ -33,4 +33,4 @@ def part_1(input_data: str) -> int:
 def part_2(input_data: str) -> int:
     """Return second solution of puzzle."""
     lines = input_data.split('\n\n')
-    return sum(all(re.search(field, line) for field in PATTERNS) for line in lines) - 1
+    return sum(all(re.search(pat, line) for pat in PATTERNS) for line in lines) - 1
