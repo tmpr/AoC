@@ -2,7 +2,7 @@
 __pycache__
 .pytest_cache
 
-**/test_expamples.py
+**/test*
 **/examples.json
 **/__init__.py
 **/build.py
