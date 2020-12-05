@@ -1,0 +1,9 @@
+.vscode
+__pycache__
+.pytest_cache
+
+template
+**/test*
+**/examples.json
+**/__init__.py
+**/build.py
