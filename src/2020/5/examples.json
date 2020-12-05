@@ -1,0 +1,20 @@
+{
+    "part_1" : [
+        {
+            "input" : "BFFFBBFRRR",
+            "solution" : 567
+        },
+        {
+            "input" : "FFFBBBFRRR",
+            "solution" : 119
+        },
+        {
+            "input" : "",
+            "solution" : ""
+        },
+        {
+            "input" : "",
+            "solution" : ""
+        }
+    ]
+}
