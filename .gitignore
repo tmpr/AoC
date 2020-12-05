@@ -1,9 +1,0 @@
-.vscode
-__pycache__
-.pytest_cache
-
-./**/test*
-./**/examples.json
-./**/__init__.py
-./**/build.py
-./**/solve.py
