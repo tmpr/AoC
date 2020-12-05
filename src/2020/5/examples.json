@@ -1,12 +1,12 @@
 {
     "part_1" : [
         {
-            "input" : "",
-            "solution" : ""
+            "input" : "BFFFBBFRRR",
+            "solution" : 567
         },
         {
-            "input" : "",
-            "solution" : ""
+            "input" : "FFFBBBFRRR",
+            "solution" : 119
         },
         {
             "input" : "",
