@@ -8,6 +8,6 @@ def part_1(input_data: str):
 
 def part_2(input_data: str):
     """Return second solution of puzzle."""
-    return sum(len(reduce(lambda a,b: a&b, (set(l) for l in line.splitlines()))) - {'\n'} 
+    return sum(len(reduce(lambda a,b: a&b, (set(l) - {'\n'} for l in line.splitlines()))) 
                     for line in input_data.split('\n\n'))
     
