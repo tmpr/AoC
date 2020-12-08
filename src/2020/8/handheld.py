@@ -17,28 +17,19 @@ class HandHeld:
             self.execute(code[self.pos])
         
         return self.acc
-    
-    def reset(self):
-        self.acc = 0
-        self.pos = 0
-        self.prev = 0
-        self.size = 0
 
     # Not so elegant Bruteforce.
     def repaired_run(self, code):
         for i, command in enumerate(code):
-            changed = deepcopy(code)
-            if command.startswith('jmp'):
-                changed[i] = command.replace('jmp', 'nop')
-            elif command.startswith('nop'):
-                changed[i] = command.replace('nop', 'jmp')
-            else:
-                continue
-            out = self.run(changed)
+            alt = deepcopy(code)
+            alt[i] = (command.replace('jmp', 'nop') if command.startswith('jmp')
+                                            else command.replace('nop', 'jmp'))
+            out = self.run(alt)
+            
             if self.prev == self.size - 1 and self.pos == 0:    
                 return out
             else:
-                self.reset()
+                self.__init__()
 
     def execute(self, command):
         command, arg = command.split()
