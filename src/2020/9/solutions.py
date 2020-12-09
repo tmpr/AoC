@@ -18,13 +18,12 @@ def part_2(input_data: str, n_preamb=25):
     inv_n = part_1(input_data, n_preamb)
     data = [int(n) for n in input_data.splitlines()]
 
-    for slice_ in slices(data):
-        acc = list(accumulate(slice_))
+    for sub_l in sublists(data):
+        acc = list(accumulate(sub_l))
         if inv_n in acc:
-            right = acc.index(inv_n)
-            return min(slice_[:right]) + max(slice_[:right])
+            contiguous = sub_l[:acc.index(inv_n)]
+            return min(contiguous) + max(contiguous)
 
 
-def slices(input_data):
-    for i in range(len(input_data)):
-        yield input_data[i:]
+def sublists(data):
+    return (data[i:] for i in range(len(data)))
