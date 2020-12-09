@@ -1,6 +1,5 @@
-from itertools import accumulate
+from itertools import accumulate, takewhile
 from collections import deque
-from copy import deepcopy
 
 
 def part_1(input_data: str, n_preamb=25):
@@ -19,10 +18,10 @@ def part_2(input_data: str, n_preamb=25):
     inv_n = part_1(input_data, n_preamb)
     data = [int(n) for n in input_data.splitlines()]
 
-    for sub_l in sublists(data):
-        acc = list(accumulate(sub_l))
-        if inv_n in acc:
-            contiguous = sub_l[:acc.index(inv_n)]
+    for i, sub_l in enumerate(sublists(data)):
+        *_, (j, max_n) = enumerate(takewhile(lambda x: x <= inv_n, accumulate(sub_l)), i)
+        if max_n == inv_n:
+            contiguous = data[i:j]
             return min(contiguous) + max(contiguous)
 
 
