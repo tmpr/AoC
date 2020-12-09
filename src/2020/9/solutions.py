@@ -1,16 +1,17 @@
 from itertools import accumulate
+from collections import deque
+from copy import deepcopy
 
 
 def part_1(input_data: str, n_preamb=25):
     """Return first solution of puzzle."""
     data = [int(n) for n in input_data.splitlines()]
-
-    for i, number in enumerate(data[n_preamb:]):
-        preamble = data[i:i+n_preamb]
-        if any(number - x in preamble for x in preamble):
-            continue
+    preamble = deque(data[:n_preamb], maxlen=n_preamb)
+    for y in data[n_preamb:]:
+        if any(y - x in preamble for x in preamble if x+x != y):
+            preamble.append(y)
         else:
-            return number
+            return y
 
 
 def part_2(input_data: str, n_preamb=25):
