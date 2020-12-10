@@ -14,6 +14,7 @@ def part_1(input_data: str):
     counts = Counter(np.diff(adapters))
     return counts[3] * counts[1]
 
+@lru_cache
 def backsearch(change_map):
     return change_map[-1] == 0 or sum(backsearch(change_map[:-1-i]) for i 
                                                 in range(change_map[-1]))
