@@ -15,9 +15,8 @@ def part_1(input_data: str):
     return counts[3] * counts[1]
 
 def backsearch(change_map):
-    if change_map[-1] == 0: return 1
-    print(change_map)
-    return sum(backsearch(change_map[:-1-i]) for i in range(change_map[-1]))
+    return change_map[-1] == 0 or sum(backsearch(change_map[:-1-i]) for i 
+                                                in range(change_map[-1]))
 
 
 
