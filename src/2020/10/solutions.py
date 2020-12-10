@@ -11,7 +11,7 @@ def part_1(input_data: str):
     adapters.append(max(adapters)+3)
     adapters = np.array(sorted(adapters))
 
-    counts = Counter(adapters[1:] - adapters[:-1])
+    counts = Counter(np.diff(adapters))
     return counts[3] * counts[1]
 
 def backsearch(change_map):
