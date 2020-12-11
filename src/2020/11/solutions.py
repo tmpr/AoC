@@ -16,8 +16,7 @@ ADJKERNEL = np.array([
 class SeatingRoom:
 
     def __init__(self, input_data):
-        self.room = np.array([[char for char in row] 
-                              for row in input_data.splitlines()])
+        self.room = np.array([list(row) for row in input_data.splitlines()])
         self.floor = self.room == FLOOR
         self.room = self.room == OCCUP
     
