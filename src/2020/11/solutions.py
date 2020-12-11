@@ -27,7 +27,6 @@ class SeatingRoom:
     def converge(self, b=False):
         old_room = 'dummy'
         while np.any(self.room != old_room):
-            print
             old_room = self.room.copy()
             self.step()
         return sum(n for row in self.room for n in row)
