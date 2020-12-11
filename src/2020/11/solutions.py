@@ -1,5 +1,4 @@
 import numpy as np
-import networkx as nx
 
 from scipy.signal import convolve2d
 
