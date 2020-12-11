@@ -3,14 +3,12 @@ import numpy as np
 from scipy.signal import convolve2d
 
 
-EMPTY = 'L'
-OCCUP = '#'
-FLOOR = '.'
+EMPTY, OCCUP, FLOOR = 'L', '#', '.'
 
 ADJKERNEL = np.array([
-    [1,   1, 1],
-    [1, 9, 1],
-    [1,   1, 1]
+    [1,  1, 1],
+    [1,  9, 1],
+    [1,  1, 1]
 ])
 
 class SeatingRoom:
@@ -24,7 +22,7 @@ class SeatingRoom:
         temp = convolve2d(self.room, ADJKERNEL, mode='same')
         self.room = (self.room + (temp == 0)) * (temp <= 12) * ~self.floor 
     
-    def converge(self, b=False):
+    def converge(self):
         old_room = 'dummy'
         while np.any(self.room != old_room):
             old_room = self.room.copy()
