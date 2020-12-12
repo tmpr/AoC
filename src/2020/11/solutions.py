@@ -1,5 +1,4 @@
 import numpy as np
-
 from scipy.signal import convolve2d
 
 
@@ -20,7 +19,8 @@ class SeatingRoom:
     
     def step(self):
         temp = convolve2d(self.room, ADJKERNEL, mode='same')
-        self.room = (self.room + (temp == 0)) * (temp <= 12) * ~self.floor 
+        self.room = (self.room + (temp == 0)) * (temp <= 12) * ~self.floor
+    
     
     def converge(self):
         old_room = 'dummy'
