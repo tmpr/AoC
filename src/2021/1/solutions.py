@@ -17,8 +17,8 @@ def count_increases(seq: t.Sequence[int]) -> int:
     return sum(a < b for a, b in pairwise(seq))
 
 
-def triple_sums(seq: t.Sequence[int]) -> t.Iterable[int]:
-    return map(sum, list(zip(seq, seq[1:], seq[2:])))
+def triple_sums(seq: t.Sequence[int]) -> t.Sequence[int]:
+    return list(map(sum, list(zip(seq, seq[1:], seq[2:]))))
 
 
 def pairwise(seq: t.Sequence) -> t.List[t.Tuple[int, int]]:

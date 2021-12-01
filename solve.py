@@ -14,6 +14,8 @@ def solve(day, year=2021, submit=True):
     if submit:
         puzzle.answer_b = answer_b
 
+    print(puzzle.answer_a, puzzle.answer_b)
+
 
 if __name__ == "__main__":
     Fire(solve)
