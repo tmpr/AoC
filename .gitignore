@@ -6,4 +6,4 @@ template
 **/test*
 **/examples.json
 **/__init__.py
-**/build.py
+build.py

@@ -2,6 +2,7 @@ from itertools import combinations
 from functools import reduce
 from operator import mul
 
+
 def mul_summands(input_data: str, n_summands: int) -> int:
     """Find summands of 2020 and return their product."""
     numbers = [int(n) for n in input_data.splitlines()]

@@ -7,7 +7,7 @@ def part_1(input_data: str, n_preamb=25):
     data = [int(n) for n in input_data.splitlines()]
     preamble = deque(data[:n_preamb], maxlen=n_preamb)
     for y in data[n_preamb:]:
-        if any(y - x in preamble for x in preamble if x+x != y):
+        if any(y - x in preamble for x in preamble if x + x != y):
             preamble.append(y)
         else:
             return y

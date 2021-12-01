@@ -11,9 +11,9 @@ def calc_seat_id(code: str) -> int:
     rows = list(range(128))
     cols = list(range(8))
     for c in code[:7]:
-        rows = bisect(rows, c == 'B')
+        rows = bisect(rows, c == "B")
     for c in code[7:]:
-        cols = bisect(cols, c == 'R')
+        cols = bisect(cols, c == "R")
     return seat_id(rows[0], cols[0])
 
 
@@ -29,4 +29,4 @@ def part_2(input_data: str):
 
     print(set(range(-1, max_)) - set(ids))
     # Pretty manual solution but idk how to compute that algorithmically :D
-    return int(input('Enter number at that sticks out: '))
+    return int(input("Enter number at that sticks out: "))
